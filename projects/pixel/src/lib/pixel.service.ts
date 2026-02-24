@@ -31,7 +31,7 @@ export class PixelService {
       // Log page views after router navigation ends
       router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {
 
-        if (this.isLoaded()) {
+        if (this.isLoaded() && config.enablePageViewTrack) {
           this.track('PageView');
         }
 

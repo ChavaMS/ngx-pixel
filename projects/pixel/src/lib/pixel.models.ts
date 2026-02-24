@@ -3,6 +3,8 @@ export interface PixelConfiguration {
   enabled?: boolean;
   /** Your Facebook Pixel ID */
   pixelId: string;
+  /** Enable PageView tracking*/
+  enablePageViewTrack: boolean;
 }
 
 export interface PixelEventProperties {
