@@ -1,0 +1,46 @@
+{
+  "name": "ngx-pixel",
+  "description": "An Angular library to simplify the use of a Facebook Pixel.",
+  "author": {
+    "name": "Niels Kersic",
+    "email": "hi@niels.codes",
+    "url": "https://niels.codes"
+  },
+  "license": "MIT",
+  "version": "1.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NielsKersic/ngx-pixel"
+  },
+  "keywords": [
+    "angular",
+    "facebook pixel",
+    "analytics",
+    "tracking",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "@angular/common": ">=11.0.1",
+    "@angular/core": ">=11.0.1"
+  },
+  "dependencies": {
+    "tslib": ">=2.0.0"
+  },
+  "module": "fesm2022/ngx-pixel.mjs",
+  "typings": "index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "esm2022": "./esm2022/ngx-pixel.mjs",
+      "esm": "./esm2022/ngx-pixel.mjs",
+      "default": "./fesm2022/ngx-pixel.mjs"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy in full compilation mode. This is not allowed.\\nPlease delete and rebuild the package with Ivy partial compilation mode, before attempting to publish.\\n')\" && exit 1"
+  }
+}
