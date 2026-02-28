@@ -82,6 +82,7 @@ export class PixelService {
       return;
     }
 
+    console.warn("eventID", eventId);
     if (properties && eventId) {
       fbq('track', eventName, properties, { eventID: eventId });
     } else if (properties) {

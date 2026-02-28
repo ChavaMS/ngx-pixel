@@ -59,9 +59,8 @@ class PixelService {
             console.warn('Tried to track an event without initializing a Pixel instance. Call `initialize()` first.');
             return;
         }
-        console.log("eventi");
+        console.warn("eventID", eventId);
         if (properties && eventId) {
-            console.log("eventid", eventId);
             fbq('track', eventName, properties, { eventID: eventId });
         }
         else if (properties) {
