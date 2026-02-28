@@ -82,9 +82,7 @@ export class PixelService {
       return;
     }
 
-    console.log("eventi");
     if (properties && eventId) {
-      console.log("eventid", eventId);
       fbq('track', eventName, properties, { eventID: eventId });
     } else if (properties) {
       fbq('track', eventName, properties);
