@@ -25,8 +25,9 @@ export declare class PixelService {
      * See {@link https://developers.facebook.com/docs/facebook-pixel/reference Facebook Pixel docs - reference}
      * @param eventName The name of the event that is being tracked
      * @param properties Optional properties of the event
+     * @param eventId Optional event ID for server-side deduplication via CAPI
      */
-    track(eventName: PixelEventName, properties?: PixelEventProperties): void;
+    track(eventName: PixelEventName, properties?: PixelEventProperties, eventId?: string): void;
     /**
      * Track a custom Event
      *

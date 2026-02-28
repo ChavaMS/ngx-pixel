@@ -66,10 +66,12 @@ export class PixelService {
    * See {@link https://developers.facebook.com/docs/facebook-pixel/reference Facebook Pixel docs - reference}
    * @param eventName The name of the event that is being tracked
    * @param properties Optional properties of the event
+   * @param eventId Optional event ID for server-side deduplication via CAPI
    */
   track(
     eventName: PixelEventName,
-    properties?: PixelEventProperties
+    properties?: PixelEventProperties,
+    eventId?: string
   ): void {
     if (!isPlatformBrowser(this.platformId)) {
       return;
@@ -80,7 +82,11 @@ export class PixelService {
       return;
     }
 
-    if (properties) {
+    console.log("eventi");
+    if (properties && eventId) {
+      console.log("eventid", eventId);
+      fbq('track', eventName, properties, { eventID: eventId });
+    } else if (properties) {
       fbq('track', eventName, properties);
     } else {
       fbq('track', eventName);
